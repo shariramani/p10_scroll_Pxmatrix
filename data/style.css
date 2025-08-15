@@ -1,0 +1,111 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+h1, h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+input, select, button {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.feed-item {
+    padding: 10px;
+    margin: 5px 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.feed-item input[type="text"] {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.feed-item input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+label {
+    display: inline-block;
+    margin: 5px 0;
+}
+
+#scrollContents label {
+    display: block;
+    margin: 8px 0;
+}
+
+#currentTime {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#freeMemory {
+    font-weight: bold;
+    color: #28a745;
+}
+
+#wifiStatus {
+    font-weight: bold;
+}

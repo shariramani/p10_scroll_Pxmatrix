@@ -1,0 +1,11 @@
+
+The ESP32 has built-in Wi-Fi and Bluetooth capabilities.
+LEDs can display over 16 million different colors.
+RSS was first developed in 1999 by Netscape.
+The first LED was created in 1962 and only produced red light.
+Wi-Fi stands for Wireless Fidelity.
+The ESP32 chip was created by Espressif Systems in Shanghai.
+P10 LED modules are commonly used in outdoor advertising displays.
+The Internet of Things (IoT) connects over 50 billion devices worldwide.
+Arduino was originally designed for students with no electronics experience.
+The first RSS feed was used to share news headlines.

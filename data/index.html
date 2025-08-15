@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP32 RSS Scroller Configuration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 RSS News Scroller</h1>
+        
+        <div class="section">
+            <h2>System Status</h2>
+            <p>Time: <span id="currentTime">Loading...</span></p>
+            <p>Free Memory: <span id="freeMemory">Loading...</span> bytes</p>
+            <p>Wi-Fi: <span id="wifiStatus">Loading...</span></p>
+        </div>
+        
+        <div class="section">
+            <h2>Time & Date Settings</h2>
+            <label>Manual Date/Time: 
+                <input type="datetime-local" id="manualDateTime">
+                <button onclick="setManualTime()">Set Time</button>
+            </label><br><br>
+            <label>Timezone: 
+                <select id="timezone">
+                    <option value="UTC">UTC - Coordinated Universal Time</option>
+                    <option value="America/New_York">Eastern Time (US)</option>
+                    <option value="America/Chicago">Central Time (US)</option>
+                    <option value="America/Denver">Mountain Time (US)</option>
+                    <option value="America/Los_Angeles">Pacific Time (US)</option>
+                    <option value="Europe/London">London - GMT</option>
+                    <option value="Europe/Paris">Paris - CET</option>
+                    <option value="Europe/Berlin">Berlin - CET</option>
+                    <option value="Asia/Tokyo">Tokyo - JST</option>
+                    <option value="Asia/Shanghai">Shanghai - CST</option>
+                    <option value="Asia/Kolkata" selected>India - IST</option>
+                    <option value="Asia/Dubai">Dubai - GST</option>
+                    <option value="Australia/Sydney">Sydney - AEST</option>
+                </select>
+                <button onclick="updateTimezone()">Apply Timezone</button>
+            </label>
+        </div>
+        
+        <div class="section">
+            <h2>Display Settings</h2>
+            <label>Brightness (0-100%): <input type="number" id="brightness" min="0" max="100" value="50"></label><br>
+            <label>Scroll Speed (10-200ms): <input type="number" id="scrollSpeed" min="10" max="200" value="80"></label><br>
+            <label>Direction: 
+                <select id="scrollDirection">
+                    <option value="0">Left</option>
+                    <option value="1">Right</option>
+                    <option value="2">Up</option>
+                    <option value="3">Down</option>
+                </select>
+            </label><br>
+            <label>Panel Type: 
+                <select id="panelType">
+                    <option value="0">Monochrome</option>
+                    <option value="1">RGB Color</option>
+                </select>
+            </label><br>
+            <label>Font Size: 
+                <select id="fontType">
+                    <option value="0">Small</option>
+                    <option value="1">Medium</option>
+                    <option value="2">Large</option>
+                    <option value="3">Custom</option>
+                </select>
+            </label><br>
+            <label>Animation: 
+                <select id="animationType">
+                    <option value="0">None</option>
+                    <option value="1">Scroll Left</option>
+                    <option value="2">Scroll Right</option>
+                    <option value="3">Scroll Up</option>
+                    <option value="4">Scroll Down</option>
+                    <option value="5">Fade</option>
+                    <option value="6">Blink</option>
+                    <option value="7">Rainbow</option>
+                </select>
+            </label><br>
+            <label><input type="checkbox" id="animationEnabled" checked> Enable Animations</label><br>
+            <button onclick="updateDisplaySettings()">Update Display</button>
+        </div>
+        
+        <div class="section">
+            <h2>Scroll Content</h2>
+            <div id="scrollContents">
+                <label><input type="checkbox" id="content_time" checked> Current Time</label><br>
+                <label><input type="checkbox" id="content_date" checked> Current Date</label><br>
+                <label><input type="checkbox" id="content_rss" checked> RSS Headlines</label><br>
+                <label><input type="checkbox" id="content_quotes"> Quote of the Day</label><br>
+                <label><input type="checkbox" id="content_facts"> Fun Facts</label><br>
+            </div>
+            <button onclick="updateScrollContent()">Update Content</button>
+        </div>
+        
+        <div class="section">
+            <h2>RSS Settings</h2>
+            <label>Fetch Interval (seconds): <input type="number" id="fetchInterval" min="60" max="3600" value="300"></label><br>
+            <label>Max News Age (hours): <input type="number" id="maxNewsAgeHours" min="1" max="168" value="24"></label><br>
+            <label>Max Headlines per Feed: <input type="number" id="maxHeadlinesPerFeed" min="1" max="50" value="10"></label><br>
+            <button onclick="updateRSSSettings()">Update RSS Settings</button>
+        </div>
+        
+        <div class="section">
+            <h2>RSS Feeds Management</h2>
+            <div id="feedsList">
+                <p>Loading feeds...</p>
+            </div>
+            <button onclick="addNewFeed()">Add New Feed</button>
+            <button onclick="loadFeeds()">Refresh Feeds</button>
+            <button onclick="resetFeeds()">Reset to Default</button>
+            <button onclick="fetchRSS()">Fetch RSS Now</button>
+        </div>
+        
+        <div class="section">
+            <h2>Quick Actions</h2>
+            <button onclick="location.href='/wifi'">Wi-Fi Settings</button>
+            <button onclick="location.href='/update'">OTA Update</button>
+        </div>
+        
+        <div id="status"></div>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>
